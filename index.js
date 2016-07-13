@@ -9,7 +9,7 @@ app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get("/", function ( req,res) {
+app.get("/github_access", function ( req,res) {
 	var codeToSend=req.query.code;//temporary code provided by github to get the access token
 	request.post(githubURL)
 		  .send({ client_id: process.env.CLIENT_ID, client_secret: process.env.CLIENT_SECRET, code: codeToSend })
@@ -21,7 +21,7 @@ app.get("/", function ( req,res) {
 		  });
 });
 
-app.get("/check", function ( req,res) {
+app.get("/", function ( req,res) {
 	return res.json({result:"wroking properly"});
 });
 app.use(errorhandler());
