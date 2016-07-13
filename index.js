@@ -17,7 +17,7 @@ app.get("/github_access", function ( req,res) {
 		  .end(function(errInternal, resInternal){
 		    if (errInternal) {console.log(errInternal); return }
 		    //here is the acces token
-			return res.json({access_token:resInternal.body.access_token});
+			return res.json({"access_token":resInternal.body.access_token});
 		  });
 });
 
@@ -29,5 +29,3 @@ app.use(errorhandler());
 app.listen(process.env.PORT || 4567, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
-
- 
