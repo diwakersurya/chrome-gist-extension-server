@@ -14,6 +14,6 @@
     "errorhandler": "^1.4.3",
     "express": "^4.14.0",
     "morgan": "^1.7.0",
-    "superagent": "^2.0.0"
+    "superagent": ">=3.7.0"
   }
 }
